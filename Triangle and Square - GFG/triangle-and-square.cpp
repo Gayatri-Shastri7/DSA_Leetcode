@@ -7,7 +7,6 @@ class Solution{
     public:
     int countSquare(int B)
     {
-	    // code here 
 	   B=B/2;
 	   B--;
 	   return (B*(B+1)/2);
