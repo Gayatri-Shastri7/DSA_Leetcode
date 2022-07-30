@@ -14,4 +14,20 @@ class Solution:
                 l = mid + 1
             else:
                 return mid
+    '''
+         low = 1
+        # high = n
+        while low <= high:
+            mid = low + high // 2
+            if guess(mid) == -1:
+                n = mid - 1
+            elif guess(mid) == 1:
+                l = mid + 1
+            else:
+                return mid
+                
+Getting Time Limit Exceeding error...                
+     '''       
+
+
             
