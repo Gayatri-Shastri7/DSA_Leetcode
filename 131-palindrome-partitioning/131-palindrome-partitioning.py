@@ -1,16 +1,3 @@
-'''
-1. This is solved using Dynamic Programming
-2. We will be using Matrix  Chain multiplication 
-3. If it's palindrome, then return zero
-4. Else, run for loops(i,j,k)
-5. After running the for loops; then 
-6. Store the result in temp answers 
-7. Afterwards return temp1+temp2+1
-8. Pickup min(res,tempres)
-9. Return the answer
-
-'''
-
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         res=[]
