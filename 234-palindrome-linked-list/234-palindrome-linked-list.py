@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    #array method 
         arr=[]
         while(head):
             arr.append(head.val)
@@ -14,3 +15,14 @@ class Solution:
             return True
         else:
             return False
+#         arr=[]
+#         while(head):
+#             arr.append(head.val)
+#             head =head.next
+            
+#         if(arr==arr[::-1]):
+#             return('true')
+        
+#         else:
+#             return('false')
+            
