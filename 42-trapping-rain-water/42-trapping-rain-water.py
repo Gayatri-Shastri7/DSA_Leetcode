@@ -1,5 +1,31 @@
-class Solution:
+class Solution:      
     def trap(self, height: List[int]) -> int:
+        left_sum=0
+        right_sum=0
+        total_sum=0
+        current_height_left=0
+        current_height_right=0
+        max_height=0
+        for i in range (len(height)):
+            
+            ###Find the sum from left:
+            current_height_left=max(height[i],current_height_left)
+            left_sum+=current_height_left
+            
+            ###Find the sum from right:
+            current_height_right=max(height[-(i+1)], current_height_right)
+            right_sum+=current_height_right
+            
+            ###Find the highest block
+            max_height=max(max_height,height[i])
+            
+            ###Substract the height of the blocks once 
+            total_sum+=height[i]
+        
+        return (left_sum+right_sum-total_sum-len(height)*max_height)
+            
+        
+        '''
         maxLeft = 0
         maxRight = 0
         ans = 0
@@ -16,7 +42,10 @@ class Solution:
                 ans+=(maxRight-height[indRight])
                 indRight-=1
         return ans
-                
+                        
+        
+        '''
+
         
         '''
         stack  = []
