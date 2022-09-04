@@ -1,6 +1,18 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        stack  = []
         ans = 0
+        for ind in range(len(height)):
+            while stack and height[ind]>height[stack[-1]]:
+                top = stack.pop()
+                if len(stack)==0:
+                    break
+                dist = ind-stack[-1]-1
+                ans+=((min(height[ind],height[stack[-1]])-height[top])*dist) 
+            stack.append(ind)
+        return ans
+        '''
+         ans = 0
         
         #using two pointers i and j on indices 1 and n-1
         i = 1
@@ -27,4 +39,6 @@ class Solution:
                 ans += rmax - height[j]
                 j -= 1
                 
-        return ans
+        return ans       
+        
+        '''
