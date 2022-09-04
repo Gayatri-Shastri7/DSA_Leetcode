@@ -1,5 +1,24 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        maxLeft = 0
+        maxRight = 0
+        ans = 0
+        indLeft,indRight = 0,len(height)-1
+        while indLeft<indRight:
+            if height[indLeft]<height[indRight]:
+                if height[indLeft]>maxLeft:
+                    maxLeft = height[indLeft]
+                ans+=(maxLeft-height[indLeft])
+                indLeft+=1
+            else:
+                if height[indRight]>maxRight:
+                    maxRight = height[indRight]
+                ans+=(maxRight-height[indRight])
+                indRight-=1
+        return ans
+                
+        
+        '''
         stack  = []
         ans = 0
         for ind in range(len(height)):
@@ -10,7 +29,10 @@ class Solution:
                 dist = ind-stack[-1]-1
                 ans+=((min(height[ind],height[stack[-1]])-height[top])*dist) 
             stack.append(ind)
-        return ans
+        return ans        
+        
+        '''
+
         '''
          ans = 0
         
