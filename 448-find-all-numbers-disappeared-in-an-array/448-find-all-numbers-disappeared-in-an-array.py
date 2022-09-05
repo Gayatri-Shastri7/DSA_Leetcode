@@ -2,10 +2,10 @@ class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         i=0
         while(i<len(nums)):
-            correct_id=nums[i]-1
+            val=nums[i]-1
 
-            if nums[i]!=nums[correct_id]:
-                nums[i],nums[correct_id]=nums[correct_id],nums[i]
+            if nums[i]!=nums[val]:
+                nums[i],nums[val]=nums[val],nums[i]
             else:
                 i=i+1
         arr=[]    
