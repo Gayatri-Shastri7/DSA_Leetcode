@@ -2,7 +2,7 @@
 
 # Overview
 
-I use this repository to document of Leetcode Problem I solve everyday.
+I use this repository to document leetcode problems I solve everyday.
 
 
 ##  Data Structures
