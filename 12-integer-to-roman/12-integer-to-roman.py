@@ -15,10 +15,10 @@ class Solution:
             4: 'IV',
             1: 'I'
             }
-        romanized = ''
+        res = ''
 
         for base, symb in roman.items():
-            romanized += symb * (num // base)
+            res += symb * (num // base)
             num %= base
         else:
-            return romanized
+            return res
