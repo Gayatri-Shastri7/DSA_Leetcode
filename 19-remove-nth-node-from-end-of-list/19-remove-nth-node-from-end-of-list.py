@@ -17,6 +17,7 @@ class Solution:
             right = right.next
         left.next = left.next.next
         return(dummy.next)
+    
         # def index(node):
         #     if not node:
         #         return 0
