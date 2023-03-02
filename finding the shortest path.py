@@ -91,3 +91,40 @@ public class LoggingAspect {
     // generate a unique ID
   }
 }
+
+
+logback.xml
+
+<configuration>
+
+  <!-- Define the MDC values you want to log -->
+  <property name="mdcValues" value="correlationId,uniqueId"/>
+
+  <!-- Define the pattern layout that includes the MDC values -->
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ISO8601} [%thread] %-5level %logger{36} [%property{correlationId}] [%property{uniqueId}] - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Set up the MDC filter -->
+  <filter class="ch.qos.logback.classic.filter.MDCFilter">
+    <key>correlationId</key>
+    <value>.*</value>
+  </filter>
+  <filter class="ch.qos.logback.classic.filter.MDCFilter">
+    <key>uniqueId</key>
+    <value>.*</value>
+  </filter>
+
+  <!-- Attach the filter to the appropriate logger -->
+  <logger name="com.example" level="DEBUG">
+    <appender-ref ref="console"/>
+    <filter ref="correlationId"/>
+    <filter ref="uniqueId"/>
+  </logger>
+
+</configuration>
+
+Aspect class
+
