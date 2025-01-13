@@ -2,93 +2,76 @@
 
 # Overview
 
-I use this repository to document leetcode problems I solve everyday.
+I use this branch to revise time complexity(information is complied from various sources)
 
+Maximum Continuous Subarray
+- Sliding Window: O(n)
 
-##  Data Structures
+Input Array is Sorted
+- Binary Search: O(log n)
+- Two Pointers: O(n)
 
-- [Arrays]
-- [Strings]
-- [Stacks & Queues]
-- [Hash Map]
-- [Trees]
-- [Graphs]
-- [Tries]
+Input is a Binary Tree
+- DFS (Preorder, Inorder, Postorder): O(n)
+- BFS (Level Order): O(n)
 
-## Algorithms
+Input is a Binary Search Tree
+- Left < Cur < Right: O(log n)
+- Inorder Traversal visits the nodes in ascending (sorted) order: O(n)
 
-- [Binary Search]
-- [DFS & BFS]
-- [Sorting]
-- [Backtracking]
+Input is a Matrix/Graph
+- DFS (Recursion, Stack): O(n)
+- BFS (Queue): O(n)
 
-###  Dynamic Programming
+Find the Shortest/Nearest Path/Distance in a Tree/Matrix/Graph
+- BFS (non-weighted): O(n)
+- Dijkstra (weighted): O(E log V)
 
-- [Decision Making]
-  - Knapsack and its Variations
-  - Buy and sell Stock I - V
-- [DP on Strings]
-  - Longest common subsequence and its variation
-  - Pattern Matching
-- [DP on Grid]
-  - Ways to reach end point in a grid
-  - Cherry Pickup + Dungeoun Game
-- [DP on Row]
-  - Jump Game I - V
-  - Climbing Stairs
-  - Fibonacci Type Questions
-- [Longest Increasing Subsequence]
-  - FIND LIS
-  - Russion Doll Variations -> LIS on two variables
-- [Merge Intervals]
-  - Burst Ballons
-  - Remove Boxes
-- [Optimal Game Strategy]
-  - Stone Game I-VII
-- [Others]
-  - Word Break
-  - Knight Dialer
-  - Largest Rectangle
+String Concatenation
+- StringBuilder: O(n) (Java, C#, etc.)
+- String.join(): O(n) (Python)
 
-##  Graphs
+Input is a Linked List
+- Dummy Node
+- Two Pointers: O(n)
+- Fast & Slow Pointers: O(n)
 
-- [Traversals on Graphs]
-  - Breadth First Search
-  - Depth First Search
-  - Bi-Directional BFS
-- [Paths & Cycles]
-  - [Topological Sort]
-    - Kahns Algorithms
-    - DFS with postorder Stack.
-  - Eulerian Circuit
-  - Bipartite (m-coloring problem)
-  - Eventual Safe states (nodes which are in a cycle)
-- [Union Find]
-  - [Disjoint Set Class]
-  - Number of Islands
-  - Accounts Merge
-  - Region Cut By Slashes
-  - Satisfiability of Equality Equations
-- ### Shortest Distance & MST
-  - Breadth First Search (+ Bidirectional)
-  - Dijsktra Algorithms
-  - Bi Directional Dijsktra
-  - A\* Algorithm
-  - Bellman Ford
-  - Floyd Warshall
-  - Prims Algorithms
-  - Kruskals Algorithms
-- **network flow**
-  - [max flow w/ edmonds karp]
-  - [min cost max flow]
-- **shortest path**
-  - **single-source**
-    - [bellman ford]
-    - [dijkstra]
-    <!-- - **all-pairs** -->
+Recomputing the Same Input
+- Memoization
 
-      
-<h4>Recursion and Backtracing</h4>
+Recursion is Banned
+- Stack
 
-[Document](https://drive.google.com/file/d/1LNsD1Dtf5z9tCj2MZzQnXU4yMZjjyAnL/view?usp=sharing) 
+Permutations/Combinations/Subsets
+- Backtracking
+
+Find the Top/Least Kth element
+- QuickSelect: O(n) average, O(n²) worst
+- Heap: O(n log k)
+
+Common Strings
+- Map
+- Trie
+
+Sort
+- Quick Sort: O(n log n) average, O(n²) worst
+- Merge Sort: O(n log n)
+- Built-in sorts: O(n log n)
+
+Find the Smallest/Largest/Median in a Stream
+- Two Heaps
+
+Must Solve In-Place
+- Swap corresponding values
+- Store different values in the same pointer
+
+Maximum/Minimum Subarray/Subset/Options
+- Dynamic Programming
+
+Map/Set
+- Time: O(1)
+- Space: O(n)
+
+Deque
+- Replaces Stack, Queue, and LinkedList
 
