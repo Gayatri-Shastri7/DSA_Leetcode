@@ -11,27 +11,34 @@ i != j , sum of digits of the number nums[i] = sum of digits of the number nums[
 Loop thru all pairs of numbers in the array
 If same sum of digit, add both and get max sum
 
-Tc - o(N^2)
+Tc - o(N^2) - TLE 
+
+Optimise : 
+
 
 
 */
 
 class Solution {
     public int maximumSum(int[] nums) {
+        Map<Integer, Integer> maxMap = new HashMap<>();
         int maxSum = -1;
 
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (digitSum(nums[i]) == digitSum(nums[j])) {
-                    maxSum = Math.max(maxSum, nums[i] + nums[j]);
-                }
+        for (int num : nums) {
+            int digitSum = digitSum(num);
+
+            if (maxMap.containsKey(digitSum)) {
+                maxSum = Math.max(maxSum, maxMap.get(digitSum) + num);
+                maxMap.put(digitSum, Math.max(maxMap.get(digitSum), num));
+            } else {
+                maxMap.put(digitSum, num);
             }
         }
 
         return maxSum;
     }
 
-    private int digitSum(int num) {
+    private static int digitSum(int num) {
         int sum = 0;
         while (num > 0) {
             sum += num % 10;  
