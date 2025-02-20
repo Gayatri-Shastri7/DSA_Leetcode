@@ -3,7 +3,7 @@ class Solution {
         /*
         nums =["01","10"]
         1. Cnt len(nums[0])
-        If nums ! in combinationn, print any one.
+        If nums ! in nums print any one.
         */
         int n = nums.length;
         StringBuilder sb = new StringBuilder();        
